@@ -23,7 +23,7 @@ variable "eventhub_name" {
   default     = null
 }
 
-variable "metric" {
+variable "enabled_metric" {
   description = "Map of metric categories to be enabled in the diagnostic setting."
   type = list(
     object(
