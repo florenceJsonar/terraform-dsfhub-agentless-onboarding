@@ -48,7 +48,7 @@ module "postgresql-diagnostic-setting" {
   enabled_log                    = [{ category = "PostgreSQLLogs" }]
   eventhub_authorization_rule_id = var.diagnostic_setting_eventhub_authorization_rule_id
   eventhub_name                  = var.diagnostic_setting_eventhub_name
-  metric                         = null
+  enabled_metric                 = null
   name                           = var.diagnostic_setting_name
   storage_account_id             = null
   target_resource_id             = module.azure-postgresql-flexible-server.this.id
