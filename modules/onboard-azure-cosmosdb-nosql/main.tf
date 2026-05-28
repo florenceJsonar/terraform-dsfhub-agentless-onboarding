@@ -61,7 +61,7 @@ module "diagnostic-setting" {
   ]
   eventhub_authorization_rule_id = var.diagnostic_setting_eventhub_authorization_rule_id
   eventhub_name                  = var.diagnostic_setting_eventhub_name
-  metric                         = null
+  enabled_metric                 = null
   name                           = var.diagnostic_setting_name
   storage_account_id             = var.diagnostic_setting_storage_account_id
   target_resource_id             = module.cosmos-nosql-account.this.id
