@@ -46,7 +46,7 @@ module "sql-server-diagnostic-setting" {
   enabled_log                    = [{ category = "SQLSecurityAuditEvents" }]
   eventhub_authorization_rule_id = var.diagnostic_setting_eventhub_authorization_rule_id
   eventhub_name                  = var.diagnostic_setting_eventhub_name
-  metric                         = [{ category = "AllMetrics" }]
+  enabled_metric                 = [{ category = "AllMetrics" }]
   name                           = var.diagnostic_setting_name
   target_resource_id             = data.azurerm_mssql_database.master.id
 }
