@@ -35,7 +35,6 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
 
     content {
       category = enabled_metric.value.category
-      enabled  = enabled_metric.value.enabled
     }
   }
 }
