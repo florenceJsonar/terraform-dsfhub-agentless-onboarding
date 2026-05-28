@@ -29,7 +29,6 @@ variable "enabled_metric" {
     object(
       {
         category = string
-        enabled  = optional(bool, true)
       }
     )
   )
