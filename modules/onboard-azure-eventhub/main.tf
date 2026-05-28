@@ -90,7 +90,7 @@ module "azure-eventhub-asset" {
   azure_storage_account   = module.storage-account.this.name
   azure_storage_container = module.storage-container.this.name
   eventhub_name           = module.eventhub.this.name
-  eventhub_namespace      = module.eventhub.this.namespace_name
+  eventhub_namespace      = module.eventhub-namespace.this.name
   format                  = var.azure_eventhub_format
   gateway_id              = var.azure_eventhub_gateway_id
   parent_asset_id         = var.azure_eventhub_parent_asset_id
