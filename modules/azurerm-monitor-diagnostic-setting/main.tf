@@ -10,7 +10,7 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
     }
 
     # Avoid overriding changes made automatically on the Azure side
-    ignore_changes = [enabled_log, metric]
+    ignore_changes = [enabled_log, enabled_metric]
   }
 
   eventhub_authorization_rule_id = var.eventhub_authorization_rule_id
@@ -29,13 +29,13 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
     }
   }
 
-  dynamic "metric" {
-    # If metric is not defined, do not create
-    for_each = var.metric != null ? var.metric : []
+  dynamic "enabled_metric" {
+    # If enabled_metric is not defined, do not create
+    for_each = var.enabled_metric != null ? var.enabled_metric : []
 
     content {
-      category = metric.value.category
-      enabled  = metric.value.enabled
+      category = enabled_metric.value.category
+      enabled  = enabled_metric.value.enabled
     }
   }
 }
